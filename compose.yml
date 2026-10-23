@@ -84,7 +84,7 @@ services:
       retries: 5
 
   cdp-uploader:
-    image: defradigital/cdp-uploader:1.19.0@sha256:7aaa9b592b5243cdd819c9fd61b0ed1beede2cc69b4e0ba6e662cb4c6e7f26a6
+    image: defradigital/cdp-uploader:1.27.0@sha256:4749a2ff6ddd34ccdc2caf63afaac1f26f3b8f0dcfd775eb36511725f39deedd
     ports:
       - '7337:7337'
     depends_on:
@@ -116,7 +116,7 @@ services:
 
   # Copies cognito seed files into a volume so cognito-stub has its own copies
   cognito-stub-init:
-    image: alpine:3.24.1@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b
+    image: alpine:3.24.2@sha256:294b683cb724975bec92580e1e685676bd4b50bda910ddb8c51d4cabeaec77e6
     volumes:
       - ./compose/cognito-local/clients.json:/seed/clients.json:ro
       - ./compose/cognito-local/local_4D8shcYm.json:/seed/local_4D8shcYm.json:ro
@@ -153,7 +153,7 @@ services:
       USE_SINGLE_INSTANCE_CACHE: true
 
   epr-re-ex-entra-stub:
-    image: defradigital/epr-re-ex-entra-stub:0.87.0@sha256:84aed5bb7e1bd9f425e637d34f95f7dfbe76c4fd628a1ebdcfc40ba46ebf75dc
+    image: defradigital/epr-re-ex-entra-stub:0.149.0@sha256:cdd23dd3577643ea4dca8d8055ec2dcb50c639cea38674229a31cb62b5cc8197
     ports:
       - 3010:3010
     environment:
